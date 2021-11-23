@@ -17,6 +17,7 @@
 ;; For more information, please refer to <https://unlicense.org>
 
 ;;; Commentary:
+
 ;; Emacs has a built-in backup system, but it does not backup on each
 ;; save. It can be made to, but that makes saving really slow (and the
 ;; UI unresponsive), especially for large files.
@@ -41,7 +42,9 @@
   :type 'string)
 
 (defcustom async-backup-predicates '(identity)
-  "List of predicates which must pass if file should be backup up.")
+  "List of predicates which must all pass for a file to be backup up.
+Each predicate must accept a single argemnt, which is the full
+path of the file to be backed up.")
 
 (defun async-backup ()
   "Backup file visited by current buffer."
