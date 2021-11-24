@@ -33,6 +33,8 @@
 
 ;;; Code:
 (require 'cl-lib)
+(eval-when-compile
+  (require 'subr-x))
 
 (defgroup async-backup nil
   "Backup on each save without freezing Emacs."
