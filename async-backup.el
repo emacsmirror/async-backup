@@ -1,8 +1,8 @@
-;;; async-backup.el --- Backup on each save, without freezing the interface
+;;; async-backup.el --- Backup on each save without freezing Emacs
 
 ;; Author: contrapunctus <xmpp:contrapunctus@jabjab.de>
 ;; Maintainer: contrapunctus <xmpp:contrapunctus@jabjab.de>
-;; Keywords: calendar
+;; Keywords: files
 ;; Homepage: https://tildegit.org/contrapunctus/async-backup
 ;; Package-Requires: ((emacs "24.4"))
 ;; Version: 0.0.1
@@ -33,6 +33,10 @@
 
 ;;; Code:
 (require 'cl-lib)
+
+(defgroup async-backup nil
+  "Backup on each save without freezing Emacs."
+  :group 'files)
 
 (defcustom async-backup-location
   (concat (locate-user-emacs-file "") "/async-backup")
