@@ -50,7 +50,8 @@
 (defcustom async-backup-predicates '(identity)
   "List of predicates which must all pass for a file to be backup up.
 Each predicate must accept a single argemnt, which is the full
-path of the file to be backed up.")
+path of the file to be backed up."
+  :type '(repeat function))
 
 (defun async-backup ()
   "Backup file visited by current buffer."
