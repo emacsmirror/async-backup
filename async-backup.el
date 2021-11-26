@@ -41,7 +41,7 @@
   :group 'files)
 
 (defcustom async-backup-location
-  (concat (locate-user-emacs-file "") "/async-backup")
+  (locate-user-emacs-file "async-backup")
   "Path to save backups to."
   :type 'directory)
 
