@@ -55,6 +55,7 @@ Each predicate must accept a single argemnt, which is the full
 path of the file to be backed up."
   :type '(repeat function))
 
+;;;###autoload
 (defun async-backup ()
   "Backup file visited by current buffer."
   (let* ((backup-root    (string-remove-suffix "/" (expand-file-name async-backup-location)))
