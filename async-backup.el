@@ -56,18 +56,21 @@ path of the file to be backed up."
   :type '(repeat function))
 
 ;;;###autoload
-(defun async-backup ()
-  "Backup file visited by current buffer."
-  (let* ((backup-root    (string-remove-suffix "/" (expand-file-name async-backup-location)))
-         (input-file     (buffer-file-name))
-         (file-name-base (file-name-base input-file))
-         (file-extension (file-name-extension input-file))
-         (file-directory (file-name-directory input-file))
+(defun async-backup (&optional file)
+  "Backup FILE, or file visited by current buffer."
+  (let* ((backup-root      (string-remove-suffix "/" (expand-file-name async-backup-location)))
+         (input-file       (if file (expand-file-name file)
+                             (buffer-file-name)))
+         (file-name-base   (file-name-base input-file))
+         (file-extension   (file-name-extension input-file))
+         (file-directory   (file-name-directory input-file))
          (output-directory (concat backup-root file-directory))
-         (output-file    (concat output-directory
-                                 file-name-base
-                                 "-" (format-time-string async-backup-time-format)
-                                 "." file-extension)))
+         (output-file      (concat output-directory
+                                   file-name-base
+                                   "-" (format-time-string async-backup-time-format)
+                                   (if file-extension
+                                       (concat "." file-extension)
+                                     ""))))
     (unless (file-exists-p output-directory)
       (make-directory output-directory t))
     (when (cl-every (lambda (predicate)
