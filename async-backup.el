@@ -3,7 +3,7 @@
 ;; Author: contrapunctus <xmpp:contrapunctus@jabjab.de>
 ;; Maintainer: contrapunctus <xmpp:contrapunctus@jabjab.de>
 ;; Keywords: files
-;; Homepage: https://tildegit.org/contrapunctus/async-backup
+;; Homepage: https://codeberg.org/contrapunctus/async-backup
 ;; Package-Requires: ((emacs "24.4"))
 ;; Version: 0.0.1
 
@@ -29,7 +29,7 @@
 ;; To enable for a specific file -
 ;;   `M-x add-file-local-variable RET eval RET (add-hook 'after-save-hook #'async-backup nil t) RET'
 ;;
-;; See the full documentation at <https://tildegit.org/contrapunctus/async-backup>
+;; See the full documentation at <https://codeberg.org/contrapunctus/async-backup>
 
 ;;; Code:
 (require 'cl-lib)
