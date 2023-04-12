@@ -16,6 +16,6 @@ To enable for a specific file -
   `M-x add-file-local-variable RET eval RET (add-hook 'after-save-hook #'async-backup nil t) RET`
 
 # License
-Chronometrist is released under your choice of [Unlicense](https://unlicense.org/) or the [WTFPL](http://www.wtfpl.net/).
+`async-backup` is released under your choice of [Unlicense](https://unlicense.org/) or the [WTFPL](http://www.wtfpl.net/).
 
 (See files [UNLICENSE](UNLICENSE) and [WTFPL](WTFPL)).
